@@ -1,0 +1,304 @@
+{
+  "collection": {
+    "info": {
+      "_postman_id": "bf5d070a-c320-42b4-b207-4cdc3b178e6f",
+      "name": "Wireless-Logic",
+      "schema": "https://schema.postman.com/json/collection/v2.1.0/collection.json",
+      "updatedAt": "2025-03-24T01:08:23.000Z",
+      "createdAt": "2025-03-23T21:08:25.000Z",
+      "lastUpdatedBy": "13579060",
+      "uid": "13579060-bf5d070a-c320-42b4-b207-4cdc3b178e6f"
+    },
+    "item": [
+      {
+        "name": "get all albums",
+        "id": "39a5ccd8-d1ef-422a-b3db-9e8460f450c1",
+        "protocolProfileBehavior": { "disableBodyPruning": true },
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8000/api/albums/",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["api", "albums", ""]
+          }
+        },
+        "response": [
+          {
+            "id": "0926b341-7368-4fe0-96e5-2275d3c06049",
+            "name": "get all albums",
+            "originalRequest": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://localhost:8000/api/albums/",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "8000",
+                "path": ["api", "albums", ""]
+              }
+            },
+            "status": "OK",
+            "code": 200,
+            "_postman_previewlanguage": "json",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "type": "text"
+              }
+            ],
+            "cookie": [],
+            "responseTime": null,
+            "body": "[\n    {\n        \"title\": \"New Album\",\n        \"is_published\": true,\n        \"track_count\": 10,\n        \"artist\": \"Artist Name\",\n        \"id\": 1\n    }\n]",
+            "uid": "13579060-0926b341-7368-4fe0-96e5-2275d3c06049"
+          }
+        ],
+        "uid": "13579060-39a5ccd8-d1ef-422a-b3db-9e8460f450c1"
+      },
+      {
+        "name": "retrieve an album",
+        "id": "c59d4729-1619-42c7-b2b7-0ca2644b8cd6",
+        "protocolProfileBehavior": { "disableBodyPruning": true },
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8000/api/albums/:album_id",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["api", "albums", ":album_id"],
+            "variable": [
+              {
+                "id": "62147309-c645-4eb8-a346-bd7ebb02cba2",
+                "key": "album_id",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        "response": [
+          {
+            "id": "76357c7b-38fa-4b6c-9ecb-bc4fc7ba1a0a",
+            "name": "retrieve an album",
+            "originalRequest": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://localhost:8000/api/albums/:album_id",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "8000",
+                "path": ["api", "albums", ":album_id"],
+                "variable": [{ "key": "album_id", "value": "1" }]
+              }
+            },
+            "status": "OK",
+            "code": 200,
+            "_postman_previewlanguage": "json",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "type": "text"
+              }
+            ],
+            "cookie": [],
+            "responseTime": null,
+            "body": "{\n    \"title\": \"New Album\",\n    \"is_published\": true,\n    \"track_count\": 10,\n    \"artist\": \"Artist Name\",\n    \"id\": 1\n}",
+            "uid": "13579060-76357c7b-38fa-4b6c-9ecb-bc4fc7ba1a0a"
+          }
+        ],
+        "uid": "13579060-c59d4729-1619-42c7-b2b7-0ca2644b8cd6"
+      },
+      {
+        "name": "create an album",
+        "id": "abfdc612-a818-421a-b7bb-e886d7bb0932",
+        "protocolProfileBehavior": { "disableBodyPruning": true },
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"title\": \"New Album\",\n    \"is_published\": true,\n    \"track_count\": 10,\n    \"artist\": \"Artist Name\"\n}",
+            "options": { "raw": { "language": "json" } }
+          },
+          "url": {
+            "raw": "http://localhost:8000/api/albums/",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["api", "albums", ""]
+          }
+        },
+        "response": [
+          {
+            "id": "aae411ff-5209-4f48-b38e-5e764ae2eaa7",
+            "name": "create an album",
+            "originalRequest": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"title\": \"New Album\",\n    \"is_published\": true,\n    \"track_count\": 10,\n    \"artist\": \"Artist Name\"\n}",
+                "options": { "raw": { "language": "json" } }
+              },
+              "url": {
+                "raw": "http://localhost:8000/api/albums/",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "8000",
+                "path": ["api", "albums", ""]
+              }
+            },
+            "status": "OK",
+            "code": 200,
+            "_postman_previewlanguage": "json",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "type": "text"
+              }
+            ],
+            "cookie": [],
+            "responseTime": null,
+            "body": "{\n    \"title\": \"New Album\",\n    \"is_published\": true,\n    \"track_count\": 10,\n    \"artist\": \"Artist Name\",\n    \"id\": 1\n}",
+            "uid": "13579060-aae411ff-5209-4f48-b38e-5e764ae2eaa7"
+          }
+        ],
+        "uid": "13579060-abfdc612-a818-421a-b7bb-e886d7bb0932"
+      },
+      {
+        "name": "update an album",
+        "id": "d1c75a9e-955e-43aa-acc8-7a347daf1683",
+        "protocolProfileBehavior": { "disableBodyPruning": true },
+        "request": {
+          "method": "PUT",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"title\": \"Updated Album\",\n    \"track_count\": 10,\n    \"is_published\": true,\n    \"artist\": \"Artist Name\"\n}",
+            "options": { "raw": { "language": "json" } }
+          },
+          "url": {
+            "raw": "http://localhost:8000/api/albums/:album_id",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["api", "albums", ":album_id"],
+            "variable": [
+              {
+                "id": "97f29799-b46c-42bd-8b32-6ea76050b9e3",
+                "key": "album_id",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        "response": [
+          {
+            "id": "dce9890a-a247-4235-a501-d7db62fdf53f",
+            "name": "update an album",
+            "originalRequest": {
+              "method": "PUT",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"title\": \"Updated Album\",\n    \"track_count\": 10,\n    \"is_published\": true,\n    \"artist\": \"Artist Name\"\n}",
+                "options": { "raw": { "language": "json" } }
+              },
+              "url": {
+                "raw": "http://localhost:8000/api/albums/:album_id",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "8000",
+                "path": ["api", "albums", ":album_id"],
+                "variable": [{ "key": "album_id", "value": "1" }]
+              }
+            },
+            "status": "OK",
+            "code": 200,
+            "_postman_previewlanguage": "json",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "type": "text"
+              }
+            ],
+            "cookie": [],
+            "responseTime": null,
+            "body": "{\n    \"title\": \"Updated Album\",\n    \"is_published\": true,\n    \"track_count\": 11,\n    \"artist\": \"Artist Name\",\n    \"id\": 1\n}",
+            "uid": "13579060-dce9890a-a247-4235-a501-d7db62fdf53f"
+          }
+        ],
+        "uid": "13579060-d1c75a9e-955e-43aa-acc8-7a347daf1683"
+      },
+      {
+        "name": "update an album Copy",
+        "id": "498ab484-f9fb-4b81-8b19-47cf9547351a",
+        "protocolProfileBehavior": { "disableBodyPruning": true },
+        "request": {
+          "method": "DELETE",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8000/api/albums/:album_id",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["api", "albums", ":album_id"],
+            "variable": [
+              {
+                "id": "2e727d1d-5dc3-4bd2-8bfe-14e017afe5bc",
+                "key": "album_id",
+                "value": "1"
+              }
+            ]
+          }
+        },
+        "response": [
+          {
+            "id": "d7c04678-79b6-449c-ac33-e239f965f6f8",
+            "name": "update an album Copy",
+            "originalRequest": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "http://localhost:8000/api/albums/:album_id",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "8000",
+                "path": ["api", "albums", ":album_id"],
+                "variable": [{ "key": "album_id", "value": "1" }]
+              }
+            },
+            "status": "OK",
+            "code": 200,
+            "_postman_previewlanguage": "json",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "type": "text"
+              }
+            ],
+            "cookie": [],
+            "responseTime": null,
+            "body": "{\n    \"message\": \"Album deleted successfully\"\n}",
+            "uid": "13579060-d7c04678-79b6-449c-ac33-e239f965f6f8"
+          }
+        ],
+        "uid": "13579060-498ab484-f9fb-4b81-8b19-47cf9547351a"
+      }
+    ]
+  }
+}

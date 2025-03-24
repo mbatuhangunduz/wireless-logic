@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  # FastAPI application service
+  app:
+    build: .
+    env_file:
+      - .env  # Load environment variables from .env file
+    depends_on:
+      - db  # Ensures database service is started before app
+    # command: sh -c "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"
+    ports:
+      - "8000:8000"  # Map host port 8000 to container port 8000
+    restart: always  # Restart the container automatically if it crashes
+
+  # PostgreSQL database service
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}  # Load user from .env file
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}  # Load password from .env file
+      POSTGRES_DB: ${POSTGRES_DB}  # Load database name from .env file
+      HOST: ${HOST}  # Load database name from .env file
+    ports:
+      - "5432:5432"  # Map host port 5432 to container port 5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data  # Persist database data
+
+# Persistent volume for PostgreSQL data
+volumes:
+  pgdata:
