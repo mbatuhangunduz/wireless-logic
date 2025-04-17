@@ -1,6 +1,3 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy container app to Azure Web App - album-fastapi-app
 
 on:
@@ -26,13 +23,14 @@ jobs:
         username: ${{ secrets.AzureAppService_ContainerUsername_1464edf59507416c9d11610e5d246f4c }}
         password: ${{ secrets.AzureAppService_ContainerPassword_d7a9061318fc4d0a9618e70dde9fd3ed }}
 
-    - name: Build and push container image to registry
+    - name: Build and push container image to registry with :latest tag
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: albumfastapi.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1464edf59507416c9d11610e5d246f4c }}/myfastapiapp:${{ github.sha }}
+        tags: |
+          albumfastapi.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1464edf59507416c9d11610e5d246f4c }}/myfastapiapp:latest
+          albumfastapi.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1464edf59507416c9d11610e5d246f4c }}/myfastapiapp:${{ github.sha }}
         file: ./Dockerfile
-        platforms: linux/amd64
 
   deploy:
     runs-on: ubuntu-latest
@@ -42,11 +40,11 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
-    - name: Deploy to Azure Web App
+    - name: Deploy :latest image to Azure Web App
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'album-fastapi-app'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_2f0de78cc051482b8c6dfaa1cb7b68cf }}
-        images: 'albumfastapi.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1464edf59507416c9d11610e5d246f4c }}/myfastapiapp:${{ github.sha }}'
+        images: 'albumfastapi.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1464edf59507416c9d11610e5d246f4c }}/myfastapiapp:latest'
