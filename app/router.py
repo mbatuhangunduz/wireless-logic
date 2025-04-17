@@ -4,6 +4,10 @@ from . import crud, models, schemas, database
 
 router = APIRouter()
 
+@router.get("/ping")
+def ping():
+    return {"message": "pong"}
+
 # Create a new album
 @router.post("/albums/", response_model=schemas.Album)
 async def create_album(album: schemas.AlbumCreate, db: Session = Depends(database.get_db)):

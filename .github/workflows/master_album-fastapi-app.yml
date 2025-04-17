@@ -32,6 +32,7 @@ jobs:
         push: true
         tags: albumfastapi.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1464edf59507416c9d11610e5d246f4c }}/myfastapiapp:${{ github.sha }}
         file: ./Dockerfile
+        platforms: linux/amd64
 
   deploy:
     runs-on: ubuntu-latest
