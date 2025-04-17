@@ -10,6 +10,7 @@ class Album(Base):
     is_published = Column(Boolean, default=True) 
     track_count = Column(Integer, nullable=False)  # Number of tracks in the album
     artist = Column(String(150), nullable=False, index=True)  # Artist name (stored as String)
+    release_year = Column(Integer, nullable=True)
 
     # If we had an Artist model, we would relate it like this:
     # artist_id = Column(Integer, ForeignKey('artists.id'))  # Artist ID
