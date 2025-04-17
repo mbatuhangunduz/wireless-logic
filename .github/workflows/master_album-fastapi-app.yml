@@ -34,7 +34,7 @@ jobs:
 
     - name: Run Alembic migrations
       run: |
-        docker run --rm albumfastapi.azurecr.io/myfastapiapp:latest alembic upgrade head
+        docker run --rm albumfastapi.azurecr.io/myfastapiapp:${{ github.sha }} alembic upgrade head
 
   deploy:
     runs-on: ubuntu-latest
