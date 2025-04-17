@@ -15,10 +15,11 @@ wireless-logic/
 │   ├── env.py             # Alembic environment configuration
 │   ├── versions/          # SQL migration scripts
 │   ├── script.py.mako     # Template for generating migration scripts
-│   └── alembic.ini        # Alembic configuration
+└── alembic.ini        # Alembic configuration
 ├── .env                   # Environment variables (database URL, etc.)
 ├── requirements.txt       # Python dependencies
 ├── Dockerfile             # Docker configuration (optional)
+├── docker-entrypoint.sh             
 └── README.md              # Project documentation
 
 This project is a REST API application built with FastAPI that integrates a PostgreSQL database and handles database migrations using Alembic. It provides basic CRUD operations for managing data. Below are the steps to set up, configure, and run the application.

@@ -1,21 +1,24 @@
-# Python 3.12 base image for better performance and security
+
 FROM python:3.12-slim
 
-# Set the working directory inside the container
+# Ortamı ayarla
 WORKDIR /app
 
-# Copy dependencies file
-COPY requirements.txt .
+# Gerekli paketler (gettext -> envsubst için)
+RUN apt-get update && apt-get install -y gettext
 
-# Install dependencies without cache to reduce image size
+# Gerekli dosyaları kopyala ve kurulum yap
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy project files to the container
+# Projeyi içeri al
 COPY . .
 
-# Ensure wait-for-it script is present for database readiness check
-COPY wait-for-it.sh /wait-for-it.sh
-RUN chmod +x /wait-for-it.sh
+# Ortam değişkenleri
+ENV PORT=80
 
-# Command to start FastAPI and run tests in parallel
-CMD ["/wait-for-it.sh", "db:5432", "--", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+# Entry point script'i çalıştır
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
