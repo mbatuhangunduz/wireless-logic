@@ -32,10 +32,6 @@ jobs:
           albumfastapi.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1464edf59507416c9d11610e5d246f4c }}/myfastapiapp:${{ github.sha }}
         file: ./Dockerfile
 
-    - name: Run Alembic migrations
-      run: |
-        docker run --rm albumfastapi.azurecr.io/myfastapiapp:${{ github.sha }} alembic upgrade head
-
   deploy:
     runs-on: ubuntu-latest
     needs: build
