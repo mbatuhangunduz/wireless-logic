@@ -36,6 +36,7 @@ def create_album(db: Session, album: schemas.AlbumCreate):
             publish_year=album.publish_year,
             detail=album.detail,
             is_single=album.is_single,
+            number_of_stream=album.number_of_stream,
         )
         db.add(db_album)
         db.commit()

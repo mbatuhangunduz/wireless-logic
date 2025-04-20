@@ -10,6 +10,7 @@ class AlbumBase(BaseModel):
     publish_year: Optional[int] = None
     detail: Optional[str] = None
     is_single: Optional[bool] = False
+    number_of_stream: Optional[int] = None
 
 class AlbumCreate(AlbumBase):
     pass  
