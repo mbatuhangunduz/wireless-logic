@@ -1,5 +1,6 @@
 #!/bin/sh
-
+echo "🧾 Available migration files:"
+ls -la ./migrations/versions
 echo "🔄 Running Alembic migrations..."
 alembic upgrade head
 

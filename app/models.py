@@ -14,6 +14,7 @@ class Album(Base):
     detail = Column(String, nullable=True)
     is_single = Column(Boolean, default=False)
     number_of_stream = Column(Integer, nullable=True)
+    deneme_m = Column(String, nullable=True)
 
     # If we had an Artist model, we would relate it like this:
     # artist_id = Column(Integer, ForeignKey('artists.id'))  # Artist ID
