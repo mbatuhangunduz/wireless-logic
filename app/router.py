@@ -4,7 +4,7 @@ from . import crud, models, schemas, database
 
 router = APIRouter()
 
-@router.get("/geldi")
+@router.get("/geldimi")
 def ping():
     return {"message": "gittimi"}
 
