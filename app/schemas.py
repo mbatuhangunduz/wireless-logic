@@ -8,7 +8,8 @@ class AlbumBase(BaseModel):
     track_count: int 
     artist: str
     publish_year: Optional[int] = None
-    details: str
+    detail: Optional[str] = None
+    # is_single: bool = False
 
 class AlbumCreate(AlbumBase):
     pass  
