@@ -7,7 +7,7 @@ class AlbumBase(BaseModel):
     is_published: bool = True
     track_count: int 
     artist: str
-    release_year = int
+    # release_year = int
 
 class AlbumCreate(AlbumBase):
     pass  
