@@ -9,7 +9,7 @@ class AlbumBase(BaseModel):
     artist: str
     publish_year: Optional[int] = None
     detail: Optional[str] = None
-    # is_single: bool = False
+    is_single: bool = False
 
 class AlbumCreate(AlbumBase):
     pass  

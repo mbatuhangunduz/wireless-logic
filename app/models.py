@@ -12,7 +12,7 @@ class Album(Base):
     artist = Column(String(150), nullable=False, index=True)  # Artist name (stored as String)
     publish_year = Column(Integer, nullable=True)
     detail = Column(String, nullable=True)
-    # is_single = Column(Boolean, default=False)
+    is_single = Column(Boolean, default=False)
 
     # If we had an Artist model, we would relate it like this:
     # artist_id = Column(Integer, ForeignKey('artists.id'))  # Artist ID

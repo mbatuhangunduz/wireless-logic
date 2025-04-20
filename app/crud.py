@@ -35,7 +35,7 @@ def create_album(db: Session, album: schemas.AlbumCreate):
             track_count=album.track_count,
             publish_year=album.publish_year,
             detail=album.detail,
-            # is_single=album.is_single,
+            is_single=album.is_single,
         )
         db.add(db_album)
         db.commit()
