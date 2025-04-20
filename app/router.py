@@ -6,7 +6,7 @@ router = APIRouter()
 
 @router.get("/gittimi")
 def ping():
-    return {"message": "geldigeldi"}
+    return {"message": "geldigeldi2"}
 
 # Create a new album
 @router.post("/albums/", response_model=schemas.Album)
