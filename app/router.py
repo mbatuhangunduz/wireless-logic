@@ -4,9 +4,9 @@ from . import crud, models, schemas, database
 
 router = APIRouter()
 
-@router.get("/pingping")
+@router.get("/geldi")
 def ping():
-    return {"message": "pongpong"}
+    return {"message": "gitti"}
 
 # Create a new album
 @router.post("/albums/", response_model=schemas.Album)
