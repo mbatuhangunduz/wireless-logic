@@ -12,6 +12,7 @@ class AlbumBase(BaseModel):
     is_single: Optional[bool] = False
     number_of_stream: Optional[int] = None
     deneme_m : Optional[str] = None
+    deneme_k : Optional[str] = None
 
 class AlbumCreate(AlbumBase):
     pass  

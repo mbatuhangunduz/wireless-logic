@@ -37,7 +37,8 @@ def create_album(db: Session, album: schemas.AlbumCreate):
             detail=album.detail,
             is_single=album.is_single,
             number_of_stream=album.number_of_stream,
-            deneme_m = album.deneme_m
+            deneme_m = album.deneme_m,
+            deneme_k = album.deneme_k
         )
         db.add(db_album)
         db.commit()
